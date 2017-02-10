@@ -1,5 +1,6 @@
 package eu.java.pg.jsonb;
 
+import com.opentable.db.postgres.embedded.EmbeddedPostgres;
 import eu.java.pg.jsonb.domain.CommonPerson;
 import eu.java.pg.jsonb.domain.Professor;
 import eu.java.pg.jsonb.domain.Student;
@@ -13,11 +14,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.sql.DataSource;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +30,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PgJsonApplication.class)
+@SpringApplicationConfiguration(classes = {PgJsonApplication.class, PgJsonDemoTest.TestConfiguration.class})
+@Configuration()
 public class PgJsonDemoTest {
 
     @Autowired
@@ -84,6 +90,19 @@ public class PgJsonDemoTest {
         System.out.println("///////////////////////////////////////////////////////////");
     }
 
+
+    public static class TestConfiguration{
+
+        @Bean
+        public DataSource dataSource() throws IOException {
+            return embeddedPostgres().getPostgresDatabase();
+        }
+
+        @Bean
+        public EmbeddedPostgres embeddedPostgres() throws IOException {
+            return EmbeddedPostgres.start();
+        }
+    }
 
 
 }
