@@ -67,6 +67,31 @@
             <version>2.6.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opentable.components</groupId>
+            <artifactId>otj-pg-embedded</artifactId>
+            <version>0.7.1</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.opentable.components</groupId>-->
+            <!--<artifactId>otj-pg-embedded</artifactId>-->
+            <!--<version>0.4.0</version>-->
+            <!--<scope>test</scope>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<artifactId>postgresql</artifactId>-->
+                    <!--<groupId>postgresql</groupId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+
     </dependencies>
 
 
