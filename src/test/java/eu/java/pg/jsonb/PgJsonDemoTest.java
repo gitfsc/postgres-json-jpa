@@ -1,5 +1,6 @@
 package eu.java.pg.jsonb;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opentable.db.postgres.embedded.EmbeddedPostgres;
@@ -20,6 +21,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -213,6 +215,4 @@ public class PgJsonDemoTest {
             return new ObjectMapper();
         }
     }
-
-
 }
