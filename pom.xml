@@ -47,12 +47,6 @@
             <version>${spring.boot.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.flywaydb</groupId>-->
-            <!--<artifactId>flyway-core</artifactId>-->
-            <!--<version>3.1</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -78,20 +72,6 @@
             <artifactId>otj-pg-embedded</artifactId>
             <version>0.7.1</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>com.opentable.components</groupId>-->
-            <!--<artifactId>otj-pg-embedded</artifactId>-->
-            <!--<version>0.4.0</version>-->
-            <!--<scope>test</scope>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<artifactId>postgresql</artifactId>-->
-                    <!--<groupId>postgresql</groupId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
-
     </dependencies>
 
 

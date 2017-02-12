@@ -3,6 +3,7 @@ package eu.java.pg.jsonb.domain;
 import eu.java.pg.jsonb.domain.info.StudentInfo;
 import eu.java.pg.jsonb.types.JSONBUserType;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
@@ -16,6 +17,7 @@ import javax.persistence.Entity;
 @Entity
 @TypeDef(name = "studentJsonb", typeClass = JSONBUserType.class, parameters = {
         @Parameter(name = JSONBUserType.CLASS, value = "eu.java.pg.jsonb.domain.info.StudentInfo")})
+@EqualsAndHashCode(callSuper = true)
 public class Student extends CommonPerson<StudentInfo> {
 
     @Type(type = "studentJsonb")
